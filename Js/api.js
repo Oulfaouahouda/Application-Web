@@ -1,7 +1,7 @@
 document.getElementById('login-form').addEventListener('submit', function(event) {
     event.preventDefault();
-    const email = document.getElementById('exampleInputEmail1').value;
-    const password = document.getElementById('exampleInputPassword1').value;
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
 
     fetch('http://localhost/Application-Web-BackEnd/api/users/login.php', {
         method: 'POST',

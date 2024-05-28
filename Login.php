@@ -31,7 +31,7 @@
 <body>
     <div class="login-container">
         <h2>Connexion</h2>
-        <form action="Login.php" method="post">
+        <form action="Login.php" method="post" id="signup-form">
             <div class="form-group">
                 <label for="email">Email :</label>
                 <input type="email" class="form-control" id="email" name="email" required>
