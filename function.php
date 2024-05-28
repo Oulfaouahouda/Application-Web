@@ -1,11 +1,11 @@
 <?php
 
 // Récupération des catégories depuis l'API
-$response_categories = file_get_contents('http://localhost/BackEnd/api/categorie/get.php');
+$response_categories = file_get_contents('http://localhost/Application-Web-BackEnd/api/categorie/get.php');
 $categories = json_decode($response_categories, true);
 
 // Récupération des produits depuis l'API
-$response_products = file_get_contents('http://localhost/BackEnd/api/product/get.php');
+$response_products = file_get_contents('http://localhost/Application-Web-BackEnd/api/product/get.php');
 $products = json_decode($response_products, true);
 
 function getDescriptionById($categories, $id) {
