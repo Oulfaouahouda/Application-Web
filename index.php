@@ -2,7 +2,6 @@
 session_start();
 
 include "function.php"
-
 ?>
 
 <!DOCTYPE html>
@@ -19,35 +18,45 @@ include "function.php"
 <?php include "header.php"; ?>
 
 <!-- Home -->
-<section id="home">
-    <div class="left">
-        <h1>Discover affordable treasures at <span>TRADITIONAL CRAFTS MOROCCO</span></h1>
-        <p>Our website offers a carefully selected range of traditional Moroccan handicrafts at competitive prices. We work directly with local artisans to provide authentic quality and a unique variety of choices to our customers.</p>
-        <a href="#">Explorez MAINTENANT</a>
-    </div>
-    <div class="right">
-        <img src="images/index.png" alt="">
+<section id="home" class="d-flex align-items-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-12 text-center text-lg-start">
+                <h1>Discover affordable treasures at <span>TRADITIONAL CRAFTS MOROCCO</span></h1>
+                <p>Our website offers a carefully selected range of traditional Moroccan handicrafts at competitive prices. We work directly with local artisans to provide authentic quality and a unique variety of choices to our customers.</p>
+                <a href="#" class="btn btn-primary">Explorez MAINTENANT</a>
+            </div>
+            <div class="col-lg-6 col-md-12 text-center">
+                <img src="images/index.png" class="img-fluid" alt="">
+            </div>
+        </div>
     </div>
 </section>
 
 <!-- Display categories -->
-<div class="container">
-    <h2>Categories</h2>
-    <ul>
+<div class="container my-5">
+    <h2 class="text-center mb-4">Categories</h2>
+    <div class="row justify-content-center">
         <?php foreach ($categories as $category): ?>
-            <li><?= $category['name']; ?></li>
+            <div class="col-md-4 col-sm-6 mb-3">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <h5 class="card-title"><?= $category['name']; ?></h5>
+                    </div>
+                </div>
+            </div>
         <?php endforeach; ?>
-    </ul>
+    </div>
 </div>
 
 <!-- Display products -->
-<div class="container">
-    <h2>Products</h2>
+<div class="container my-5">
+    <h2 class="text-center mb-4">Products</h2>
     <div class="row">
         <?php foreach ($products as $product): ?>
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="images/<?= $product['image']; ?>" class="card-img-top" alt="<?= $product['name']; ?>">
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card h-100">
+                    <img src="images/<?= $product['image']; ?>" class="card-img-top img-fluid" alt="<?= $product['name']; ?>">
                     <div class="card-body">
                         <h5 class="card-title"><?= $product['name']; ?></h5>
                         <p class="card-text"><?= $product['description']; ?></p>

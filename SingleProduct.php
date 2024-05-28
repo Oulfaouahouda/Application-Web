@@ -22,18 +22,21 @@ include "function.php";
 
     <?php include "header.php"; ?>
 
-    <div class="row col-12 p-5 mt-4">
-        <div class="card col-8 offset-2">
-            <img src="images/<?php echo  $product['image']; ?>" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title"><?php echo $product['name']; ?></h5>
-                <p class="card-text"><?php echo  getDescriptionById( $categories,$product['category_id']) ; ?></p>
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 col-sm-12">
+                <div class="card">
+                    <img src="images/<?php echo $product['image']; ?>" class="card-img-top img-fluid" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title"><?php echo $product['name']; ?></h5>
+                        <p class="card-text"><?php echo getDescriptionById($categories, $product['category_id']); ?></p>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Category: <?php echo getCategoryNameById($categories, $product['category_id']); ?></li>
+                        <li class="list-group-item">Price: <?php echo $product['price']; ?> $</li>
+                    </ul>
+                </div>
             </div>
-
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item">categorie: <?php echo getCategoryNameById($categories, $product['category_id']); ?></li>
-                <li class="list-group-item">prix: <?php echo $product['price']; ?> $</li>
-            </ul>
         </div>
     </div>
 
